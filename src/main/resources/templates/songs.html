@@ -3,18 +3,19 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Songs</title>
+<link th:href="@{/style/style.css}" rel="stylesheet" />
 </head>
 <body>
 
+	<div class="container">
+		<h2>Lista Canzoni</h2>
+		<ul >
+			<li th:each="c : ${canzoni}" th:text="${c.getTitle()}"></li>
+		</ul>
+		<a href="/">Torna alla Home</a> <a href="/movies">Vai ai Films</a>
+	</div>
 
-	<h2>Lista Canzoni</h2>
-	<ul th:each="c : ${canzoni}">
-		<li th:text="${c.getTitle()}"></li>
-	</ul>
 
 
-
-	<a href="/">Torna alla Home</a>
-	<a href="/movies">Vai ai Films</a>
 </body>
 </html>

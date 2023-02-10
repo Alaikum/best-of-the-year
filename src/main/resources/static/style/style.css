@@ -1,0 +1,35 @@
+@charset "ISO-8859-1";
+
+* {
+	box-sizing: border-box;
+}
+
+li, lo, menu {
+	list-style: none;
+}
+
+body {
+	background-color: beige;
+}
+
+.container {
+	max-width: 750px;
+	margin: 0 auto;
+	padding: 1rem;
+	text-align: center
+}
+h2{
+	color:red;
+	text-transform: uppercase;
+}
+a, li {
+	font-size: 1rem;
+	padding: 1rem;
+	border: 1px solid black;
+	margin: 50px;
+}
+a:hover,li:hover {
+	color:red;
+	background-color:white;
+	cursor:pointer;
+}
