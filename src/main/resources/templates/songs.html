@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Songs</title>
+</head>
+<body>
+
+
+	<h2>Lista Canzoni</h2>
+	<ul th:each="c : ${canzoni}">
+		<li th:text="${c.getTitle()}"></li>
+	</ul>
+
+
+
+	<a href="/">Torna alla Home</a>
+	<a href="/movies">Vai ai Films</a>
+</body>
+</html>
