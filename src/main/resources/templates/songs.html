@@ -4,18 +4,24 @@
 <meta charset="ISO-8859-1">
 <title>Songs</title>
 <link th:href="@{/style/style.css}" rel="stylesheet" />
+<div th:replace="~{fragments :: bootstrap_myStyle}"></div>
 </head>
 <body>
+	<div th:replace="~{fragments :: navbar('songs')}"></div>
+	<div class="cont">
+		<h2 class="title">Lista Canzoni</h2>
+		<ul>
 
-	<div class="container">
-		<h2>Lista Canzoni</h2>
-		<ul >
-			<li th:each="c : ${canzoni}" th:text="${c.getTitle()}"></li>
+			<li class="li__style" th:each="c : ${canzoni}">
+				<p th:text="${c.getTitle()}"></p> 
+						<a class="a__style" th:href="@{/songs/{id}(id=${c.getId()})}">Dettaglio </a>
+						
+							
+			</li>
 		</ul>
-		<a href="/">Torna alla Home</a> <a href="/movies">Vai ai Films</a>
 	</div>
 
 
-
+	<div th:replace="~{fragments :: script}"></div>
 </body>
 </html>

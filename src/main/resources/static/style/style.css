@@ -12,24 +12,24 @@ body {
 	background-color: beige;
 }
 
-.container {
+.cont {
 	max-width: 750px;
-	margin: 0 auto;
+	margin: 75px auto;
 	padding: 1rem;
 	text-align: center
 }
-h2{
+.title{
 	color:red;
 	text-transform: uppercase;
 }
-a, li {
+.a__style, .li__style {
 	font-size: 1rem;
 	padding: 1rem;
 	border: 1px solid black;
 	margin: 50px;
 }
-a:hover,li:hover {
+.a__style:hover,.li__style:hover {
 	color:red;
-	background-color:white;
+	background-color:beige;
 	cursor:pointer;
 }

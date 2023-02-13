@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.bestOf.theYear.Movie;
@@ -20,6 +21,8 @@ public class MainController {
 		model.addAttribute("mio_nome", "Adamo");
 		return "index";
 	}
+	
+
 
 	private List<Song> getBestSongs() {
 		List<Song> songs = new ArrayList<>();
@@ -46,12 +49,26 @@ public class MainController {
 		model.addAttribute("canzoni", getBestSongs());
 		return "songs";
 	}
+	
+	@GetMapping("/songs/{id}") // richieste Get del tipo /songs/id
+	public String dettaglioSong(Model model, @PathVariable("id") String id) {
+		model.addAttribute("song", getBestSongs().get(Integer.parseInt(id)-1));
+
+		return "song";
+	}
 
 	
 	@GetMapping("/movies")
 	public String movies(Model model) {
 		model.addAttribute("films", getBestMovies());
 		return "movies";
+	}
+	
+	@GetMapping("/movies/{id}") // richieste Get del tipo /movies/id
+	public String dettaglioMovie(Model model, @PathVariable("id") String id) {
+		model.addAttribute("movie", getBestMovies().get(Integer.parseInt(id)-1));
+
+		return "movie";
 	}
 
 }

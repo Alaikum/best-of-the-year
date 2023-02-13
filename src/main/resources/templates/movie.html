@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Dettaglio Film</title>
+<div th:replace="~{fragments :: bootstrap_myStyle}"></div>
+</head>
+<body>
+<div th:replace="~{fragments :: navbar('movies')}"></div>
+
+	<div class="cont">
+		<h1 th:text="'Dettaglio del Film con ID:'+ ${movie.getId()}"></h1>
+		<div class="card cont" style="width: 18rem;">
+			<img src="https://picsum.photos/200" class="card-img-top" alt="...">
+			<div class="card-body">
+				<p class="card-text"
+					th:text="'Titolo: '+ ${movie.getTitle()}"></p>
+			</div>
+		</div>
+	</div>
+
+
+	<div th:replace="~{fragments :: script}"></div>
+</body>
+</html>
